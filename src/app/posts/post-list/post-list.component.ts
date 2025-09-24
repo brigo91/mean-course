@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-post-list',
   standalone: false,
-  templateUrl: './post-list.html',
-  styleUrl: './post-list.scss'
+  templateUrl: './post-list.component.html',
+  styleUrl: './post-list.component.scss'
 })
 export class PostList {
   posts = [

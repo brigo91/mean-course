@@ -9,9 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
 
-import { PostCreate } from './posts/post-create/post-create';
-import { PostList } from './posts/post-list/post-list';
-import { Header } from './header/header';
+import { PostCreate } from './posts/post-create/post-create.component';
+import { PostList } from './posts/post-list/post-list.component';
+import { Header } from './header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
