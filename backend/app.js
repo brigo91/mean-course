@@ -11,7 +11,8 @@ mongoose.connect("mongodb+srv://brigovaczbalazs_db_user:lCwinY53ZCJE1GeM@cluster
         console.log("Connected to your database");
     }).catch(() => {
         console.log("connection failed to your database");
-    })
+    });
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -33,28 +34,18 @@ app.post("/api/posts", (req, res, next) => {
         title: req.body.title,
         content: req.body.content
     });
-    console.log(post);
+    post.save();
     res.status(201).json({
         message: "Post added successfully"
     })
 })
 
 app.get('/api/posts', (req, res, next) => {
-    const posts = [
-        {
-        id: "fadf12421l",
-        title: "First server-side post",
-        content: "This is coming from the server"
-        },
-        {
-        id: "ksajflaj132",
-        title: "Second server-side post",
-        content: "This is coming from the server!"
-        }
-    ];
-    res.status(200).json({
-        message: 'Post fetched successully',
-        posts
+    Post.find().then(documents => {
+        res.status(200).json({
+            message: 'Post fetched successully',
+            posts: documents
+        });
     });
 });
 
