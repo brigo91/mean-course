@@ -13,6 +13,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { Header } from './header/header.component';
 import { MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatExpansionModule, MatExpansionPanelActionRow } from '@angular/materia
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MatInputModule,
     MatCard,
     MatButton,
