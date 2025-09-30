@@ -42,6 +42,7 @@ export class PostCreateComponent {
   }
 
   onSavePost(form: NgForm) {
+  this.isLoading = true;
    if (this.mode === "create") {
       this.postsService.addPost(form.value.title, form.value.content);
     } else {

@@ -14,6 +14,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { Header } from './header/header.component';
 import { MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButton,
     MatToolbar,
     MatExpansionModule,
-    MatExpansionPanelActionRow
+    MatExpansionPanelActionRow,
+    MatProgressSpinnerModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners()
