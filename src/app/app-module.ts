@@ -15,6 +15,7 @@ import { Header } from './header/header.component';
 import { MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatToolbar,
     MatExpansionModule,
     MatExpansionPanelActionRow,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners()
