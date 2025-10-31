@@ -4,7 +4,7 @@ import { NgForm } from "@angular/forms";
 @Component({ 
   standalone: false,
   templateUrl: "./login.component.html",
-    // styleUrls: ["./login.component.css"]
+  styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent {
     isLoading = false;
