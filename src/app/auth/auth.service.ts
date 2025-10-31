@@ -15,5 +15,14 @@ export class AuthService {
       .subscribe(response => {
         console.log(response);
       });
-    }
+  }
+
+  loginUser(email: string, password: string) {
+    const authData: AuthData = { email: email, password: password };
+    this.http
+      .post("http://localhost:3000/api/user/login", authData)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { AuthService } from "../auth.service";
 
 @Component({ 
   standalone: false,
@@ -8,9 +9,13 @@ import { NgForm } from "@angular/forms";
 })
 export class LoginComponent {
     isLoading = false;
-    constructor() {}
+    
+    constructor(private authService: AuthService) {}
 
     onLogin(form: NgForm) {
-        console.log(form.value);
+      if (form.invalid) {
+        return;
+      }
+      this.authService.loginUser(form.value.email, form.value.password);
     }
 }
