@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({ 
   standalone: false,
@@ -8,4 +9,8 @@ import { Component } from "@angular/core";
 export class LoginComponent {
     isLoading = false;
     constructor() {}
+
+    onLogin(form: NgForm) {
+        console.log(form.value);
+    }
 }
