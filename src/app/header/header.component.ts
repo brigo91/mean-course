@@ -11,18 +11,22 @@ import { AuthService } from '../auth/auth.service';
 export class Header {
   userIsAuthenticated = false;
   private authListenerSubs!: Subscription;
-
+  
   constructor(private authService: AuthService) {}
-
+  
   ngOnInit() {
     this.authListenerSubs = this.authService
-      .getAuthStatusListener()
-      .subscribe((isAuthenticated: boolean) => {
-        this.userIsAuthenticated = isAuthenticated;
-      });
+    .getAuthStatusListener()
+    .subscribe((isAuthenticated: boolean) => {
+      this.userIsAuthenticated = isAuthenticated;
+    });
   }
-
+  
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
+  }
+  
+  onLogout() {
+    this.authService.logout();
   }
 }
